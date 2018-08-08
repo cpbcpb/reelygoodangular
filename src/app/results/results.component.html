@@ -1,0 +1,19 @@
+<h4>Search Results</h4>
+<button *ngIf="!plot" (click)="togglePlot()">More detail</button>
+<button *ngIf="plot"  (click)="togglePlot()">Less detail</button>
+<div *ngIf="!plot" >
+  <div *ngFor="let movie of searchResults">
+    <h4>{{movie.title}}</h4>
+    <h4>{{movie.release_date  |date}}</h4>
+    <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="poster from {{movie.title}}">
+  </div>
+</div>
+<div *ngIf="plot" >
+  <div *ngFor="let movie of searchResults">
+    <h4>{{movie.title}}</h4>
+    <h4>{{movie.release_date |date}}</h4>
+    <h4>{{movie.genre_ids}}</h4>
+    <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="poster from {{movie.title}}">
+    <p>{{movie.overview}}</p>
+  </div>
+</div>
