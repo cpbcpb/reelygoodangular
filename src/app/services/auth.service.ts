@@ -12,7 +12,8 @@ export class AuthService {
   errorMessage:any;
 
   constructor(private http: Http) { }
-
+  movieAdding:any;
+  // $push: { faveMovies: req.body.addFaveMovieId},
   handleError(e) {
     this.errorMessage=e.json().message;
     console.log('errorMessage is'+this.errorMessage)
@@ -50,7 +51,36 @@ export class AuthService {
     .map(res => res.json())
       .catch(this.handleError);
   }
-
+  addwish(idObject) {
+    return this.http.post(`http://localhost:3000/user/addwish`, idObject, {withCredentials: true})
+    .map(res => res.json())
+      .catch(this.handleError);
+  }
+  addfave(idObject) {
+    return this.http.post(`http://localhost:3000/user/addfave`, idObject, {withCredentials: true})
+    .map(res => res.json())
+      .catch(this.handleError);
+  }
+  addseen(idObject) {
+    return this.http.post(`http://localhost:3000/user/addseen`, idObject, {withCredentials: true})
+    .map(res => res.json())
+      .catch(this.handleError);
+  }
+  removewish(idObject) {
+    return this.http.post(`http://localhost:3000/user/removewish`, idObject, {withCredentials: true})
+    .map(res => res.json())
+      .catch(this.handleError);
+  }
+  removefave(idObject) {
+    return this.http.post(`http://localhost:3000/user/removefave`, idObject, {withCredentials: true})
+    .map(res => res.json())
+      .catch(this.handleError);
+  }
+  removeseen(idObject) {
+    return this.http.post(`http://localhost:3000/user/removeseen`, idObject, {withCredentials: true})
+    .map(res => res.json())
+      .catch(this.handleError);
+  }
   deleteUser(){
     return this.http.post(`http://localhost:3000/user/deleteuser`, {withCredentials: true})
     .map(res => res.json())

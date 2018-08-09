@@ -1,0 +1,11 @@
+img {
+    width:100px;
+}
+.eachMovie{
+    width: 100px;
+    padding: 10px;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}

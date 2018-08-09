@@ -9,21 +9,17 @@ import { AppComponent } from './app.component';
 import { TitlesearchComponent } from './titlesearch/titlesearch.component';
 import { AdvancedsearchComponent } from './advancedsearch/advancedsearch.component';
 import { ResultsComponent } from './results/results.component';
-import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MainComponent } from './main/main.component';
+import { ListComponent } from './list/list.component';
+import { MoviedetailComponent } from './moviedetail/moviedetail.component';
 
 const appRoutes: Routes = [
-  { path: 'title', component: TitlesearchComponent },
-  {
-    path: 'app',
-    component: AppComponent,
-    data: { title: 'Movie Review Site' }
-  },
-  { path: '',
-    redirectTo: '/app',
-    pathMatch: 'full'
-  },
+  { path: '', component: MainComponent },
+  { path: 'profile', 
+  component: ProfileComponent },
+
   // { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -35,9 +31,11 @@ const appRoutes: Routes = [
     TitlesearchComponent,
     AdvancedsearchComponent,
     ResultsComponent,
-    SignupComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    MainComponent,
+    ListComponent,
+    MoviedetailComponent
   ],
   imports: [
     BrowserModule,

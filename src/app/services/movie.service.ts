@@ -19,5 +19,10 @@ export class MovieService {
     return this.http.post('http://localhost:3000/movies/filtersearch', searchQuery)
     .map((responseFromServer)=>responseFromServer.json())
   }
+  findOne(id){
+    return this.http.get(`http://localhost:3000/movies/find/${id}`)
+    .map((responseFromServer)=>responseFromServer.json())
+  }
+
 
 }

@@ -1,14 +1,13 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router'
+import { AuthService } from '../services/auth.service';
 import {FormsModule} from '@angular/forms'
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.css']
 })
-export class LoginComponent implements OnInit, OnChanges {
-
+export class MainComponent implements OnInit, OnChanges {
   signupUser:any={};
   theActualUser:any=null;
   loginUser:any={};
@@ -17,17 +16,20 @@ export class LoginComponent implements OnInit, OnChanges {
 
   signup:boolean=false
 
-  constructor(private authService: AuthService) { }
-
+  constructor( private activatedRoute: ActivatedRoute, private authService: AuthService, private router: Router)  { }
   tryToSignUp(){
     console.log(this.signupUser);
     this.authService.signup(this.signupUser)
     .subscribe(res=>{this.successCallback(res)},
       errorthing=>{this.errorCallback(errorthing)}
     );
-  
   }
-
+  logMeOut(){
+    this.authService.logout()
+    .subscribe(res=>{this.theActualUser=null;
+      window.location.reload(); })
+  }
+  
   toggleSignup(){
     this.signup= !this.signup;
   }
@@ -36,46 +38,42 @@ export class LoginComponent implements OnInit, OnChanges {
     .subscribe(res=>{this.successCallback(res)},
       errorthing=>{this.errorCallback(errorthing)}
     );
-  
   }
-  logMeOut(){
-    this.authService.logout()
-    .subscribe(res=>{this.theActualUser=null })
-  }
-  
   successCallback(userObject){
     this.theActualUser=userObject;
     this.theError=null;
     this.theMessage=null;
-    this.checkIfLoggedIn();
+    this.checkIfLoggedIn()
   }
-
+  
   errorCallback(errorObject){
     this.theError=errorObject;
     this.checkIfLoggedIn()
   }
-  successCallback2(userObject){
+  successCallbackUser(userObject){
     this.theActualUser=userObject;
     this.theError=null;
     this.theMessage=null;
   }
-
-  errorCallback2(errorObject){
+  
+  errorCallbackUser(errorObject){
     this.theError=errorObject;
   }
   checkIfLoggedIn(){
     this.authService.isLoggedIn()
     .subscribe(
-      (res)=> this.successCallback2(res)
-    ),
-    errorthing=>{this.errorCallback2(errorthing)}
+      (res)=>{
+      this.theActualUser=res;
+      this.theError=null;
+      this.theMessage=null;
+      },
+    errorthing=>{this.theError=errorthing})
   }
-
+  
   ngOnInit() {
-  this.checkIfLoggedIn()
+    this.checkIfLoggedIn()
+  }
+  ngOnChanges() {
   }
 
-  ngOnChanges() {
-    this.checkIfLoggedIn()
-    }
 }

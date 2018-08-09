@@ -1,0 +1,26 @@
+<h3>My favorite movies:</h3>
+<div class="lists">
+<div *ngFor="let movie of theActualUser.faveMovies">
+  <div *ngIf="movie!=null" >
+    <app-moviedetail id1="{{movie}}"></app-moviedetail>
+  </div>
+</div>
+</div>
+<h3>I want to see:</h3>
+wishlist {{theActualUser.wishlist|json}}
+<div class="lists">
+<div *ngFor="let movie of theActualUser.wishlist">
+    <div *ngIf="movie!=null" >
+        <app-moviedetail id1="{{movie}}"></app-moviedetail>
+    </div>
+</div>
+</div>
+<h3>I've seen:</h3>
+<div class="lists">
+<div *ngFor="let movie of theActualUser.seenMovies">
+    <div *ngIf="movie!=null" >
+        <app-moviedetail id1="{{movie}}"></app-moviedetail>
+    </div>
+</div>
+
+</div>

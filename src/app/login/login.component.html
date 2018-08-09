@@ -1,9 +1,15 @@
-<div *ngIf="theActualUser">
+LOGIN COMPONENT
+
+<!-- <div *ngIf="theActualUser">
   User: {{theActualUser |json}}
-</div>
+</div> -->
   <div *ngIf="theMessage">
     {{theMessage}}
   </div>
+  <div *ngIf="theActualUser">    
+    <button (click)="logMeOut()">Logout</button>
+  </div>
+  
   <div *ngIf="!theActualUser">
 
     <form (submit)="tryToLogin()">
@@ -35,9 +41,4 @@
         </form>
       </div>
   
-  </div>
-
-
-    <div *ngIf="theActualUser">
-    <button (click)="logMeOut()">Logout</button>
   </div>
