@@ -1,4 +1,4 @@
-TITLESEARCH COMPONENT
+<div class="titlesearch">
 <div *ngIf="!advanced">
   <label for="title">Title</label>
   <input type="text" name="title" [(ngModel)]="searchQuery.title">
@@ -13,4 +13,5 @@ TITLESEARCH COMPONENT
 </div>
 <div *ngIf="searchResults">
   <app-results [searchResults]="searchResults"></app-results>
+</div>
 </div>

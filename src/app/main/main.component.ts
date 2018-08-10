@@ -14,6 +14,7 @@ export class MainComponent implements OnInit, OnChanges {
   theError:any;
   theMessage:any;
 
+  notLoggedIn:any;
   signup:boolean=false
 
   constructor( private activatedRoute: ActivatedRoute, private authService: AuthService, private router: Router)  { }
@@ -67,7 +68,7 @@ export class MainComponent implements OnInit, OnChanges {
       this.theError=null;
       this.theMessage=null;
       },
-    errorthing=>{this.theError=errorthing})
+    errorthing=>{this.notLoggedIn=errorthing})
   }
   
   ngOnInit() {

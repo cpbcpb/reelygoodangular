@@ -1,0 +1,47 @@
+nav{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(12, 10, 119, 0.945);
+    padding: 20px;
+    flex-wrap: wrap;
+    margin: 0;
+    width:100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+nav button{ 
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin:10px 20px;
+    font-size: 20px;
+    color:rgba(12, 10, 119, 0.945);
+}
+.notloggedin{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-content:center;
+    color:white;
+
+}
+.allthesignup{
+    display:flex;
+    flex-direction:column;
+}
+.allthelogin{
+    display:flex;
+    flex-direction:row;    
+    justify-content: space-around;
+    align-content:center;
+    width:100%;
+    margin-right:30px;
+}
+form label{
+    padding:10px;
+    margin:0 5px 0 5px;
+}
+form input{
+    padding: 5px;
+    margin: 5px;
+}

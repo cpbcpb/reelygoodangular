@@ -13,7 +13,7 @@ amovie:any;
 id:any;
 @Input() id1: string;
 theMovie:any=null;
-  constructor(private router: Router, activatedRoute: ActivatedRoute,
+  constructor(private router: Router, private activatedRoute: ActivatedRoute,
   private movieService:MovieService) { }
 
   findById(thing){

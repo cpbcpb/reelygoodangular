@@ -17,6 +17,7 @@ loginUser:any={};
 theError:any;
 theMessage:any;
 signup:boolean=false
+notLoggedIn:any;
   constructor(private authService: AuthService, private router: Router, private activatedRoute: ActivatedRoute,
     private movieService: MovieService) { }
     logMeOut(){
@@ -25,7 +26,22 @@ signup:boolean=false
         this.router.navigate(['']); })
 
     }
-    
+    tryToSignUp(){
+      console.log(this.signupUser);
+      this.authService.signup(this.signupUser)
+      .subscribe(res=>{this.successCallback(res)},
+        errorthing=>{this.errorCallback(errorthing)}
+      );
+    }
+  toggleSignup(){
+    this.signup= !this.signup;
+  }
+    tryToLogin(){
+      this.authService.login(this.loginUser)
+      .subscribe(res=>{this.successCallback(res)},
+        errorthing=>{this.errorCallback(errorthing)}
+      );
+    }
     successCallback(userObject){
       this.theActualUser=userObject;
       this.theError=null;
@@ -45,7 +61,7 @@ signup:boolean=false
     }
   
     errorCallback2(errorObject){
-      this.theError=errorObject;
+      this.notLoggedIn=errorObject;
     }
   
     checkIfLoggedIn(){

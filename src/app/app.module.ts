@@ -15,7 +15,7 @@ import { MainComponent } from './main/main.component';
 import { ListComponent } from './list/list.component';
 import { MoviedetailComponent } from './moviedetail/moviedetail.component';
 import { OnemovieComponent } from './onemovie/onemovie.component';
-import { ReviewComponent } from './review/review.component';
+import { CommentformComponent } from './commentform/commentform.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
@@ -23,6 +23,8 @@ const appRoutes: Routes = [
   component: ProfileComponent },
   { path: 'detail/:id', 
   component: OnemovieComponent },
+  { path: 'makecomment/:reviewid', 
+  component: CommentformComponent },
 
   // { path: '**', component: PageNotFoundComponent }
 ];
@@ -41,7 +43,7 @@ const appRoutes: Routes = [
     ListComponent,
     MoviedetailComponent,
     OnemovieComponent,
-    ReviewComponent
+    CommentformComponent
   ],
   imports: [
     BrowserModule,

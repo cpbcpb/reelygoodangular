@@ -22,6 +22,20 @@ createReview(theNewReview){
   .map(res => res.json())
   .catch(this.handleError);
 }
+
+createComment(theNewComment){
+  return this.http.post(`http://localhost:3000/comment/commentcreate`, theNewComment, {withCredentials: true})
+  .map(res => res.json())
+  .catch(this.handleError);
+}
+
+getReview(reviewid){
+  return this.http.get(`http://localhost:3000/review/withcomments/${reviewid}`, {withCredentials: true})
+  .map(res => res.json())
+  .catch(this.handleError);
+}
+
+
 }
 
 

@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: arial;
+}
+* button{ 
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin:10px 20px;
+    font-size: 20px;
+    color:rgba(12, 10, 119, 0.945);
+}
+* input{
+    padding: 5px 5px;
+    border-radius: 10px;
+    margin:10px 20px;
+    font-size: 20px;
+    color:rgba(12, 10, 119, 0.945);
+}
+
+* select{
+    padding: 5px 5px;
+    border-radius: 10px;
+    margin:10px 20px;
+    font-size: 20px;
+    color:rgba(12, 10, 119, 0.945);
+}

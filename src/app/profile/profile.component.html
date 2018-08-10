@@ -1,7 +1,5 @@
 <nav>
-        <div *ngIf="theMessage">
-            {{theMessage}}
-            </div>
+
             <div *ngIf="theActualUser">    
             <button (click)="logMeOut()">Logout</button>
             </div>
@@ -37,16 +35,19 @@
                 </form>
                 </div>
             
-            </div>    
+            </div>   
+   
+<a [routerLink]="['']"><button>Back to Main Page</button></a>
+
     </nav> 
-<a [routerLink]="['']">Back to Main Page</a>
+
 <div *ngIf="theActualUser">
 <h4>Username: {{theActualUser.username}}</h4>
-<h4>Email: {{theActualUser.email}}</h4>
 <h4>Avatar: <img src="{{theActualUser.avatar}}" alt="" width=80px></h4>
+<h4>Email: {{theActualUser.email}}</h4>
+
 <h4>Avatar url:{{theActualUser.avatar}}</h4>
-<h4>Username: {{theActualUser.username}}</h4>
-<h4>Username: {{theActualUser.username}}</h4>
-<h4>ReviewsMade: {{theActualUser.reviewsMade}}</h4>
+
+
 <app-list></app-list>
 </div>

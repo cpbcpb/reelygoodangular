@@ -1,59 +1,60 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router'
 import {FormsModule} from '@angular/forms'
 import {MovieService} from '../services/movie.service'
 import {AuthService} from '../services/auth.service'
 import { Location } from '@angular/common';
 import {ReviewService} from '../services/review.service'
+
 @Component({
-  selector: 'app-onemovie',
-  templateUrl: './onemovie.component.html',
-  styleUrls: ['./onemovie.component.css']
+  selector: 'app-commentform',
+  templateUrl: './commentform.component.html',
+  styleUrls: ['./commentform.component.css']
 })
-export class OnemovieComponent implements OnInit {
+export class CommentformComponent implements OnInit {
   theActualUser:any={};
   loginUser:any={};
   theError:any;
   theMessage:any;
-
+  theReview:any;
   amovie:any;
   id:any;
+  theMovie:any=null;
 
-theMovie:any=null;
-toggleReviewForm: Boolean=false;
-toggleCommentForm: Boolean=false;
-usableId:Number=0;
-newReview: any={};
-newComment: any={};
+  newComment: any={};
+  createAComment(){
+    console.log("createAcomment was clicked")
+    console.log(this.newComment)
+    this.reviewService.createComment(this.newComment)
+    .subscribe(res=>{this.successCallback(res)
+      this.getReview();
+      this.location.back()
+    },
+      
+    errorthing=>{this.errorCallback(errorthing)}
+  );
+  }
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     private movieService:MovieService, 
-  private authService:AuthService,
-  private location: Location,
-  private reviewService:ReviewService
-) { }
+    private authService:AuthService,
+    private location: Location,
+    private reviewService:ReviewService
+    ) { }
 
-  getMovie(): void {
-    const id2 = +this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(id2)
-    this.movieService.findOne(id2)
+  getReview(): void {
+    const reviewId = this.activatedRoute.snapshot.paramMap.get('reviewid');
+    console.log("reviewID",reviewId)
+    this.reviewService.getReview(reviewId)
       .subscribe(res => {
-        this.theMovie = res;
-        this.newReview={tmdb:this.theMovie.movie.id};
-
+        this.theReview = res; 
+        this.getMovie(res.tmdb);
+        this.newComment={tmdb:res.tmdb,
+        review: res._id,
+      };   
       }
       );
     }
 
-createAReview(){
-  console.log("createAreview was clicked")
-  console.log(this.newReview)
-  this.reviewService.createReview(this.newReview)
-  .subscribe(res=>{this.successCallback(res)
-    this.getMovie();},
-  errorthing=>{this.errorCallback(errorthing)}
-);
-}
-    
 successCallback(userObject){
   this.theActualUser=userObject;
   this.theError=null;
@@ -65,7 +66,13 @@ errorCallback(errorObject){
   this.theError=errorObject;
   this.checkIfLoggedIn()
 }
-    
+getMovie(thing): void {
+  this.movieService.findOne(thing)
+    .subscribe(res => {
+      this.theMovie = res;
+    }
+    );
+  }
 successCallback2(userObject){
   this.theActualUser=userObject;
   this.theError=null;
@@ -83,18 +90,11 @@ checkIfLoggedIn(){
   errorthing=>{this.errorCallback2(errorthing)}
 }
 
-    toggleReview(){
-      this.toggleReviewForm= !this.toggleReviewForm;
-    }
-    toggleComment(){
-      this.toggleCommentForm= !this.toggleCommentForm;
-    }
-
     goBack(): void {
       this.location.back();
     }
   ngOnInit() {
-    this.getMovie();
+    this.getReview();
     this.checkIfLoggedIn()
   }
 

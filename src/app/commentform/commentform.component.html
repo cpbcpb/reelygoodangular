@@ -1,0 +1,47 @@
+<div *ngIf="theMovie!=null">
+<div class="comment-form">
+     <label for=""></label>
+     <label for="">Comment:</label>
+      <textarea  name="blah" cols="50" rows="3" [(ngModel)]="newComment.comment"></textarea>
+      <button (click)="createAComment()"> Submit </button>
+      <button (click)="goBack()">go back</button>
+    </div> 
+
+
+<div  class="review-section">
+    <div class="theWholeReview">
+        <h3>Reviews</h3>
+
+
+  <div class="theInnerReview">
+  <div class="reviewTitle">
+    <h3>{{theReview.title}}</h3>
+  </div>
+  <div class="reviewText">
+    <p>{{theReview.review}}</p>
+    <h5>Written by {{theReview.user.username}} on {{theReview.created_at | date:'medium' }}</h5> 
+  </div>
+  <hr>
+    <div class="thecomments">
+      <div class="titleandbutton">
+    <h4>Comments</h4>
+  </div>
+      <div *ngIf="theReview.comments" class="commentitself">
+    <div *ngFor="let comment of theReview.comments.reverse()">
+      <div class="comment-heading">
+      <h4>{{comment.user.username}}  </h4><em>{{comment.created_at | date:'medium' }}</em> <br>
+    </div>
+      <div class="comment-body">
+      {{comment.comment}}
+    </div>
+      <h5 *ngIf="comment.updated_at!=comment.created_at">Edited at {{comment.updated_at | date:'medium' }}</h5>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+      <div class="transparent" [ngStyle]="{'background-image':'url(https://image.tmdb.org/t/p/original' + theMovie.movie.backdrop_path + ')'}">
+        </div>
+      </div>

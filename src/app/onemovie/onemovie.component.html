@@ -1,6 +1,5 @@
 <div *ngIf="theMovie!=null" class="entire">
 <button (click)="goBack()">go back</button>
-<h1>{{theActualUser | json}}</h1>
 <div class="moviebox">
 
 <div class="movie-row">
@@ -34,10 +33,8 @@
 <div  class="review-section">
     <div class="theWholeReview">
         <h3>Reviews</h3>
-        <app-review></app-review>
         <button (click)="toggleReview()">Create a review</button>
-        {{theMovie.movie.id}}
-        <div *ngIf="toggleReviewForm">
+  <div *ngIf="toggleReviewForm" class="formReview">
   <strong>Write your Own Review</strong>
   <label for="">Title:</label>
   <input name="blah" type="text" [(ngModel)]="newReview.title">
@@ -50,7 +47,7 @@
   </div>
 <div *ngIf="theMovie.reviews">
   <div class="theInnerReview">
-  <div *ngFor="let review of theMovie.reviews">
+  <div *ngFor="let review of theMovie.reviews.reverse()" class="reviewFor">
   <div class="reviewTitle">
     <h3>{{review.title}}</h3>
   </div>
@@ -58,26 +55,25 @@
     <p>{{review.review}}</p>
     <h5>Written by {{review.user.username}} on {{review.created_at | date:'medium' }}</h5> 
   </div>
-    <hr>
-    <h3>Comments</h3>
-    <button (click)="toggleComment()">Create a comment</button>
-    <div *ngIf="toggleCommentForm" class="formDiv">
-        <strong>Comment</strong>
-        <label for=""></label>
-                 <label for="">Comment:</label>
-                  <textarea  name="blah" cols="50" rows="3" [(ngModel)]="newComment.comment"></textarea>
-                  <button (click)="createAComment()"> Submit </button>
-        </div>
-    <div *ngIf="review.comments">
-    <div *ngFor="let comment of review.comments">
-      <br>
-      {{comment.user.username}} {{comment.created_at | date:'medium' }}
+  <hr>
+    <div class="thecomments">
+      <div class="titleandbutton">
+    <h4>Comments</h4>
+   <a routerLink="/makecomment/{{review._id}}"> <button>Comment</button></a>
+  </div>
+      <div *ngIf="review.comments" class="commentitself">
+    <div *ngFor="let comment of review.comments.reverse()">
+      <div class="comment-heading">
+      <h4>{{comment.user.username}}  </h4><em>{{comment.created_at | date:'medium' }}</em> <br>
+    </div>
+      <div class="comment-body">
       {{comment.comment}}
+    </div>
       <h5 *ngIf="comment.updated_at!=comment.created_at">Edited at {{comment.updated_at | date:'medium' }}</h5>
-  <br>
+    </div>
     </div>
   </div>
-  <hr>
+
 </div>
   </div>
 </div>
