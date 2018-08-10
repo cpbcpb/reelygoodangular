@@ -25,6 +25,7 @@ export class ResultsComponent implements OnInit, OnChanges {
     this.plot= !this.plot;
   }
 
+
   successCallback(userObject){
     this.theError=null;
     this.theMessage=null;

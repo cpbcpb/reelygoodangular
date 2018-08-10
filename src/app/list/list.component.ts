@@ -14,7 +14,7 @@ export class ListComponent implements OnInit, OnChanges {
   loginUser:any={};
   theError:any;
   theMessage:any;
-  theMovie:any;
+  theMovie:any=null;
   constructor(private activatedRoute: ActivatedRoute,
   private authService: AuthService, 
   private router: Router,

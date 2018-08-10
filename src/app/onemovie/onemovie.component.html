@@ -1,0 +1,90 @@
+<div *ngIf="theMovie!=null" class="entire">
+<button (click)="goBack()">go back</button>
+<h1>{{theActualUser | json}}</h1>
+<div class="moviebox">
+
+<div class="movie-row">
+  <div class="imageAndUnder">
+      <img src="http://image.tmdb.org/t/p/w500{{theMovie.movie.poster_path}}" alt="poster from {{theMovie.movie.title}}">
+      <br>
+  </div>
+
+  <div class="titleAndOverview">
+    <div class="titleAndTag">
+  <h1>{{theMovie.movie.title}}</h1>
+  <h2 *ngIf="theMovie">{{theMovie.movie.tagline}}</h2>
+</div>
+  <div class="overview">
+
+        <h3>Overview:</h3>
+      <p>{{theMovie.movie.overview}}</p>
+      <div>
+          Genres:<span *ngFor="let genre of theMovie.movie.genres"> *{{genre.name}}* </span>
+      </div>
+      <div>
+          <a href="{{theMovie.movie.homepage}}">{{theMovie.movie.homepage}}</a>  
+          </div>
+    </div>
+ </div>
+</div>
+
+
+ </div>
+
+<div  class="review-section">
+    <div class="theWholeReview">
+        <h3>Reviews</h3>
+        <app-review></app-review>
+        <button (click)="toggleReview()">Create a review</button>
+        {{theMovie.movie.id}}
+        <div *ngIf="toggleReviewForm">
+  <strong>Write your Own Review</strong>
+  <label for="">Title:</label>
+  <input name="blah" type="text" [(ngModel)]="newReview.title">
+  <input type="hidden" name="blah" value={{theMovie.movie.id}}>
+  <label for="">rating:</label>
+  <input type="number" min="1" max="5" name="blah" [(ngModel)]="newReview.rating">
+  <label for="">Review:</label>
+  <textarea  name="blah" cols="100" rows="20" [(ngModel)]="newReview.review"></textarea>
+  <button (click)="createAReview()"> Submit </button>
+  </div>
+<div *ngIf="theMovie.reviews">
+  <div class="theInnerReview">
+  <div *ngFor="let review of theMovie.reviews">
+  <div class="reviewTitle">
+    <h3>{{review.title}}</h3>
+  </div>
+  <div class="reviewText">
+    <p>{{review.review}}</p>
+    <h5>Written by {{review.user.username}} on {{review.created_at | date:'medium' }}</h5> 
+  </div>
+    <hr>
+    <h3>Comments</h3>
+    <button (click)="toggleComment()">Create a comment</button>
+    <div *ngIf="toggleCommentForm" class="formDiv">
+        <strong>Comment</strong>
+        <label for=""></label>
+                 <label for="">Comment:</label>
+                  <textarea  name="blah" cols="50" rows="3" [(ngModel)]="newComment.comment"></textarea>
+                  <button (click)="createAComment()"> Submit </button>
+        </div>
+    <div *ngIf="review.comments">
+    <div *ngFor="let comment of review.comments">
+      <br>
+      {{comment.user.username}} {{comment.created_at | date:'medium' }}
+      {{comment.comment}}
+      <h5 *ngIf="comment.updated_at!=comment.created_at">Edited at {{comment.updated_at | date:'medium' }}</h5>
+  <br>
+    </div>
+  </div>
+  <hr>
+</div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="transparent" [ngStyle]="{'background-image':'url(https://image.tmdb.org/t/p/original' + theMovie.movie.backdrop_path + ')'}">
+</div>
+</div>
+

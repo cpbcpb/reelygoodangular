@@ -14,11 +14,15 @@ import { ProfileComponent } from './profile/profile.component';
 import { MainComponent } from './main/main.component';
 import { ListComponent } from './list/list.component';
 import { MoviedetailComponent } from './moviedetail/moviedetail.component';
+import { OnemovieComponent } from './onemovie/onemovie.component';
+import { ReviewComponent } from './review/review.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
   { path: 'profile', 
   component: ProfileComponent },
+  { path: 'detail/:id', 
+  component: OnemovieComponent },
 
   // { path: '**', component: PageNotFoundComponent }
 ];
@@ -35,7 +39,9 @@ const appRoutes: Routes = [
     ProfileComponent,
     MainComponent,
     ListComponent,
-    MoviedetailComponent
+    MoviedetailComponent,
+    OnemovieComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
-<div class="moviebox">
+<div *ngIf="theMovie" class="moviebox">
 
 <h4>{{theMovie.movie.title}}</h4>
+<a routerLink="/detail/{{theMovie.movie.id}}">See detail{{theMovie.movie.id}}</a>
 <div class="imagebox">
 <img src="http://image.tmdb.org/t/p/w500{{theMovie.movie.poster_path}}" alt="poster from {{theMovie.movie.title}}">
 </div>

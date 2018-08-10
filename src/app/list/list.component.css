@@ -1,11 +1,10 @@
 .movieList{
     display:flex;
     flex-direction:row;
-    background-color: blue;
+
 }
 .lists{
     display:flex;
     flex-direction:row;
-    background-color:orange;
     flex-wrap:wrap;
 }

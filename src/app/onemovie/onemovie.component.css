@@ -1,0 +1,163 @@
+
+.moviebox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .entire{
+      position: relative;
+  }
+  .transparent{
+    content: "";
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+    background-size: contain;
+    background-position: top;
+    background-size: cover;
+
+    height: 100vh;
+  }
+  .movie-row{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items:flex-start;
+      width: 100%;
+
+      flex-wrap: wrap;
+  }
+  .imageAndUnder{
+      display:flex;
+      flex-direction: column;
+      align-items: space-between;
+      max-height: 80vh;
+  }
+  img{
+    display:flex;
+    opacity:1;
+    max-height: 80vh;
+}
+  .imageAndUnder div{
+      padding:5px;
+  }
+
+  .titleAndOverview{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-content: space-between;
+      align-items: space-between;
+    margin: 0 30px 0 30px;
+
+    max-width: 550px;
+    min-width: 30px;
+    max-height: 80vh;
+  }
+  .titleAndTag{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-content: center;
+    align-items: space-around;
+    padding:0;
+    margin: 0 auto 30px auto;
+}
+  .overview{
+      display:flex;
+      flex-direction: column;
+      padding:0 20px 20px 20px;
+      background-color:rgba(255,255,255,.5);
+      font-size: 20px;
+  }
+h1{
+    font-size: 36px;
+    text-align: center;
+    margin:0;
+}
+.titleAndTag h2{
+
+    margin:0;
+}
+.review-section{
+    display: flex;
+    flex-direction:column;
+    align-content: center;
+    margin:20px;
+
+}
+.theWholeReview{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 50px;
+    background-color:rgba(255,255,255,.3);
+}
+.theInnerReview{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: flex-start;
+    margin-top:0;
+    margin-bottom: 20px;
+
+}
+.theWholeReview h3{
+    margin:0;
+}
+.theWholeReview button{
+max-width: max-content;
+padding: 5px;
+border-radius: 40px;
+margin:0;
+}
+.reviewTitle{
+    text-align: center;
+    font-family: arial;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.reviewText{
+    font-family:arial;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.formDiv{
+    display:flex;
+    flex-direction:row;
+}
+.formComment{
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(255,255,255,.3);
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.formComment button{
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.formReview{
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(255,255,255,.3);
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: max-content;
+}
+
+.formReview button{
+    border-radius: 10px;
+    padding: 10px;
+}

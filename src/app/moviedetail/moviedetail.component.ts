@@ -12,7 +12,7 @@ export class MoviedetailComponent implements OnInit {
 amovie:any;
 id:any;
 @Input() id1: string;
-theMovie:any;
+theMovie:any=null;
   constructor(private router: Router, activatedRoute: ActivatedRoute,
   private movieService:MovieService) { }
 
@@ -23,11 +23,10 @@ theMovie:any;
     this.theMovie=res;
     }
   )
-
   }
+  
   ngOnInit() {
  this.findById(this.id1)
-
     }
   }
 
