@@ -41,13 +41,15 @@
 
     </nav> 
 
-<div *ngIf="theActualUser">
-<h4>Username: {{theActualUser.username}}</h4>
-<h4>Avatar: <img src="{{theActualUser.avatar}}" alt="" width=80px></h4>
-<h4>Email: {{theActualUser.email}}</h4>
-
-<h4>Avatar url:{{theActualUser.avatar}}</h4>
-
+<div *ngIf="theActualUser" >
+    <div class="userinfo">
+<p><img src="{{theActualUser.avatar}}" alt="" width=80px>Username: {{theActualUser.username}}</p>
+<p>Email: {{theActualUser.email}}</p>
+<p>Avatar url:{{theActualUser.avatar}}</p>
+</div>
 
 <app-list></app-list>
 </div>
+<div class="transparent">
+
+    </div>

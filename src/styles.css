@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 *{
-    font-family: arial;
-}
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, arial;}
 * button{ 
     padding: 10px 20px;
     border-radius: 30px;

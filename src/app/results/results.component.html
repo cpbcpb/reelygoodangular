@@ -1,13 +1,10 @@
-RESULTS COMPONENT
-<h4>Search Results</h4>
-<button *ngIf="!plot" (click)="togglePlot()">More detail</button>
-<button *ngIf="plot"  (click)="togglePlot()">Less detail</button>
+<!-- <button *ngIf="!plot" (click)="togglePlot()">More detail</button>
+<button *ngIf="plot"  (click)="togglePlot()">Less detail</button> -->
 
 <div class="flex">
   <div *ngFor="let movie of searchResults" class="eachMovie">
     <h4>{{movie.title}}</h4>
     <h4>{{movie.release_date  |date}}</h4>
-    <h4>{{movie.id}}</h4>
     <div *ngIf="theActualUser">
     <div *ngIf="theActualUser.faveMovies">
     <button *ngIf="!theActualUser.faveMovies.toString().includes(movie.id)" (click)="favoriteMovie(movie.id)">Add to favorites</button>
