@@ -1,62 +1,76 @@
-nav{
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgba(12, 10, 119, 0.945);
-    padding: 20px;
-    flex-wrap: wrap;
-    margin: 0;
-    width:100%;
-    font-size:21px;
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, arial;
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(12, 10, 119, 0.945);
+  padding: 20px;
+  flex-wrap: wrap;
+  margin: 0;
+  width: 100%;
+  font-size: 21px;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, arial;
 }
-nav button{ 
-    padding: 10px 20px;
-    border-radius: 30px;
-    margin:10px 20px;
-    font-size: 20px;
-    color:rgba(12, 10, 119, 0.945);
+svg {
+  width: 55px;
 }
-.notloggedin{
-    display:flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    justify-content: space-around;
-    align-content:center;
-    color:white;
-
+.tmdb {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-.allthesignup{
-    display:flex;
-    flex-direction:column;
+.tmdbtext {
+  font-size: 8px;
+  color: limegreen;
+  width: 80px;
+  padding-left: 10px;
 }
-.allthelogin{
-    display:flex;
-    flex-direction:row;    
-    justify-content: space-around;
-    align-content:center;
-    width:100%;
-    margin-right:30px;
+nav button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin: 10px 20px;
+  font-size: 20px;
+  color: rgba(12, 10, 119, 0.945);
 }
-form label{
-    padding:10px;
-    margin:0 5px 0 5px;
+.notloggedin {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  color: white;
 }
-form input{
-    padding: 5px;
-    margin: 5px;
+.allthesignup {
+  display: flex;
+  flex-direction: column;
 }
-.transparent{
-    background-image: url("../images/krists-luhaers-543526-unsplash.jpg");
-    content: "";
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
-    z-index: -1;   
-    background-size: contain;
-    background-position: top;
-    background-size: cover;
-    height: 100vh;
-  }
+.allthelogin {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  width: 100%;
+  margin-right: 30px;
+}
+form label {
+  padding: 10px;
+  margin: 0 5px 0 5px;
+}
+form input {
+  padding: 5px;
+  margin: 5px;
+}
+.transparent {
+  background-image: url("../images/krists-luhaers-543526-unsplash.jpg");
+  content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+  background-size: contain;
+  background-position: top;
+  background-size: cover;
+  height: 100vh;
+}

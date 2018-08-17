@@ -3,42 +3,44 @@ LOGIN COMPONENT
 <!-- <div *ngIf="theActualUser">
   User: {{theActualUser |json}}
 </div> -->
-  <div *ngIf="theMessage">
-    {{theMessage}}
-  </div>
-  <div *ngIf="theActualUser">    
-    <button (click)="logMeOut()">Logout</button>
-  </div>
-  
-  <div *ngIf="!theActualUser">
+<div *ngIf="theMessage">
+  {{theMessage}}
+</div>
+<div *ngIf="theActualUser">
+  <button (click)="logMeOut()">Logout</button>
+</div>
 
-    <form (submit)="tryToLogin()">
-      {{error}}
-      <div *ngIf="theError">
-        Error: {{theError}}
-      </div>
+<div *ngIf="!theActualUser">
+
+  <form (submit)="tryToLogin()">
+    {{error}}
+    <div *ngIf="theError">
+      Error: {{theError}}
+    </div>
     <label>Username</label>
     <input name="blah" [(ngModel)]="loginUser.username" type="text">
     <label>Password</label>
-    <input name="blah" [(ngModel)]="loginUser.password" type="text">
+    <input type="password" name="blah" [(ngModel)]="loginUser.password">
     <button>Login</button>
+  </form>
+  <button *ngIf="!theActualUser" (click)="toggleSignup()">Signup</button>
+  <div *ngIf="signup">
+    <h2>Signup Form</h2>
+    {{error}}
+    <div *ngIf="theError">
+      Error: {{theError}}
+    </div>
+    <form (submit)="tryToSignUp()">
+      <label>Username</label>
+      <input name="blah" [(ngModel)]="signupUser.username" type="text">
+      <label>Password</label>
+      <input type="password" name="blah" [(ngModel)]="signupUser.password">
+      <label>Email</label>
+      <input name="blah" [(ngModel)]="signupUser.email" type="email">
+      <label>Avatar URL</label>
+      <input name="blah" [(ngModel)]="signupUser.avatar" type="text">
+      <button>Complete Registration</button>
     </form>
-    <button *ngIf="!theActualUser" (click)="toggleSignup()">Signup</button>
-    <div *ngIf="signup">
-        <h2>Signup Form</h2>
-        {{error}}
-        <div *ngIf="theError">
-          Error: {{theError}}
-        </div>
-        <form (submit)="tryToSignUp()">
-        <label>Username</label>
-        <input name="blah" [(ngModel)]="signupUser.username" type="text">
-        <label>Password</label>
-        <input name="blah" [(ngModel)]="signupUser.password" type="password">
-        <label>Email</label>
-        <input name="blah" [(ngModel)]="signupUser.email" type="email">
-        <button>Complete Registration</button>
-        </form>
-      </div>
-  
   </div>
+
+</div>

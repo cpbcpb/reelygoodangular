@@ -1,35 +1,39 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { RouterModule, Routes } from '@angular/router';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
+import { RouterModule, Routes } from "@angular/router";
 
-import {MovieService} from './services/movie.service';
-import { AppComponent } from './app.component';
-import { TitlesearchComponent } from './titlesearch/titlesearch.component';
-import { AdvancedsearchComponent } from './advancedsearch/advancedsearch.component';
-import { ResultsComponent } from './results/results.component';
-import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
-import { MainComponent } from './main/main.component';
-import { ListComponent } from './list/list.component';
-import { MoviedetailComponent } from './moviedetail/moviedetail.component';
-import { OnemovieComponent } from './onemovie/onemovie.component';
-import { CommentformComponent } from './commentform/commentform.component';
+import { MovieService } from "./services/movie.service";
+import { AppComponent } from "./app.component";
+import { TitlesearchComponent } from "./titlesearch/titlesearch.component";
+import { AdvancedsearchComponent } from "./advancedsearch/advancedsearch.component";
+import { ResultsComponent } from "./results/results.component";
+import { LoginComponent } from "./login/login.component";
+import { ProfileComponent } from "./profile/profile.component";
+import { MainComponent } from "./main/main.component";
+import { ListComponent } from "./list/list.component";
+import { MoviedetailComponent } from "./moviedetail/moviedetail.component";
+import { OnemovieComponent } from "./onemovie/onemovie.component";
+import { CommentformComponent } from "./commentform/commentform.component";
 
 const appRoutes: Routes = [
-  { path: '', component: MainComponent },
-  { path: 'profile', 
-  component: ProfileComponent },
-  { path: 'detail/:id', 
-  component: OnemovieComponent },
-  { path: 'makecomment/:reviewid', 
-  component: CommentformComponent },
+  { path: "", component: MainComponent },
+  {
+    path: "profile",
+    component: ProfileComponent
+  },
+  {
+    path: "detail/:id",
+    component: OnemovieComponent
+  },
+  {
+    path: "makecomment/:reviewid",
+    component: CommentformComponent
+  }
 
   // { path: '**', component: PageNotFoundComponent }
 ];
-
-
 
 @NgModule({
   declarations: [
@@ -49,11 +53,12 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes,
+    RouterModule.forRoot(
+      appRoutes
       // { enableTracing: true } // <-- debugging purposes only
-    ),
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

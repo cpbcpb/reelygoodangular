@@ -1,31 +1,33 @@
 <div *ngIf="theActualUser">
     <div class="list-container">
-    <h3>My favorites:</h3>
-    <div class="lists">
-        <div *ngFor="let movie of theActualUser.faveMovies">
-  <div *ngIf="movie!=null" >
-    <app-moviedetail id1="{{movie}}"></app-moviedetail>
-  </div>
+        <h3>My favorites:</h3>
+        <div class="lists">
+            <div *ngFor="let movie of theActualUser.faveMovies">
+                <div *ngIf="movie!=null">
+                    <app-moviedetail id1="{{movie}}"></app-moviedetail>
+                </div>
 
-</div>
-</div>
-</div>
-<div class="list-container">
-<h3>I want to see:</h3>
-<div class="lists">
-    <div *ngFor="let movie of theActualUser.wishlist">
-    <div *ngIf="movie!=null" >
-        <app-moviedetail id1="{{movie}}"></app-moviedetail>
-    </div></div>
-</div>
-</div>
-<div class="list-container">
-<h3>I've seen:</h3>
-<div class="lists">
-    <div *ngFor="let movie of theActualUser.seenMovies">
-    <div *ngIf="movie!=null" >
-        <app-moviedetail id1="{{movie}}"></app-moviedetail>
-    </div></div>
-</div>
+            </div>
+        </div>
+    </div>
+    <div class="list-container">
+        <h3>I want to see:</h3>
+        <div class="lists">
+            <div *ngFor="let movie of theActualUser.wishlist">
+                <div *ngIf="movie!=null">
+                    <app-moviedetail id1="{{movie}}"></app-moviedetail>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list-container">
+        <h3>I've seen:</h3>
+        <div class="lists">
+            <div *ngFor="let movie of theActualUser.seenMovies">
+                <div *ngIf="movie!=null">
+                    <app-moviedetail id1="{{movie}}"></app-moviedetail>
+                </div>
+            </div>
+        </div>
 
-</div>
+    </div>

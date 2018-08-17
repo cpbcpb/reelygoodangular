@@ -1,87 +1,86 @@
 <div *ngIf="theMovie!=null" class="entire">
-<button (click)="goBack()">go back</button>
-<div class="moviebox">
+  <button (click)="goBack()">go back</button>
+  <div class="moviebox">
 
-<div class="movie-row">
-  <div class="imageAndUnder">
-      <img src="http://image.tmdb.org/t/p/w500{{theMovie.movie.poster_path}}" alt="poster from {{theMovie.movie.title}}">
-      <br>
-  </div>
-
-  <div class="titleAndOverview">
-    <div class="titleAndTag">
-  <h1>{{theMovie.movie.title}}</h1>
-  <h2 *ngIf="theMovie">{{theMovie.movie.tagline}}</h2>
-</div>
-  <div class="overview">
-
-        <h3>Overview:</h3>
-      <p>{{theMovie.movie.overview}}</p>
-      <div>
-          Genres:<span *ngFor="let genre of theMovie.movie.genres"> *{{genre.name}}* </span>
+    <div class="movie-row">
+      <div class="imageAndUnder">
+        <img src="http://image.tmdb.org/t/p/w500{{theMovie.movie.poster_path}}" alt="poster from {{theMovie.movie.title}}">
+        <br>
       </div>
-      <div>
-          <a href="{{theMovie.movie.homepage}}">{{theMovie.movie.homepage}}</a>  
+
+      <div class="titleAndOverview">
+        <div class="titleAndTag">
+          <h1>{{theMovie.movie.title}}</h1>
+          <h2 *ngIf="theMovie">{{theMovie.movie.tagline}}</h2>
+        </div>
+        <div class="overview">
+
+          <h3>Overview:</h3>
+          <p>{{theMovie.movie.overview}}</p>
+          <div>
+            Genres:<span *ngFor="let genre of theMovie.movie.genres"> *{{genre.name}}* </span>
           </div>
+          <div>
+            <a href="{{theMovie.movie.homepage}}">{{theMovie.movie.homepage}}</a>
+          </div>
+        </div>
+      </div>
     </div>
- </div>
-</div>
 
 
- </div>
+  </div>
 
-<div  class="review-section">
+  <div class="review-section">
     <div class="theWholeReview">
-        <h3>Reviews</h3>
-        <button (click)="toggleReview()">Create a review</button>
-  <div *ngIf="toggleReviewForm" class="formReview">
-  <strong>Write your Own Review</strong>
-  <label for="">Title:</label>
-  <input name="blah" type="text" [(ngModel)]="newReview.title">
-  <input type="hidden" name="blah" value={{theMovie.movie.id}}>
-  <label for="">rating:</label>
-  <input type="number" min="1" max="5" name="blah" [(ngModel)]="newReview.rating">
-  <label for="">Review:</label>
-  <textarea  name="blah" cols="100" rows="20" [(ngModel)]="newReview.review"></textarea>
-  <button (click)="createAReview()"> Submit </button>
-  </div>
-<div *ngIf="theMovie.reviews">
-  <div class="theInnerReview">
-  <div *ngFor="let review of theMovie.reviews.reverse()" class="reviewFor">
-  <div class="reviewTitle">
-    <h3>{{review.title}}</h3>
-  </div>
-  <div class="reviewText">
-    <p>{{review.review}}</p>
-    <h5>Written by {{review.user.username}} on {{review.created_at | date:'medium' }}</h5> 
-  </div>
-  <hr>
-    <div class="thecomments">
-      <div class="titleandbutton">
-    <h4>Comments</h4>
-   <a routerLink="/makecomment/{{review._id}}"> <button>Comment</button></a>
-  </div>
-      <div *ngIf="review.comments" class="commentitself">
-    <div *ngFor="let comment of review.comments.reverse()">
-      <div class="comment-heading">
-      <h4>{{comment.user.username}}  </h4><em>{{comment.created_at | date:'medium' }}</em> <br>
-    </div>
-      <div class="comment-body">
-      {{comment.comment}}
-    </div>
-      <h5 *ngIf="comment.updated_at!=comment.created_at">Edited at {{comment.updated_at | date:'medium' }}</h5>
-    </div>
+      <h3>Reviews</h3>
+      <button (click)="toggleReview()">Create a review</button>
+      <div *ngIf="toggleReviewForm" class="formReview">
+        <strong>Write your Own Review</strong>
+        <label for="">Title:</label>
+        <input name="blah" type="text" [(ngModel)]="newReview.title">
+        <input type="hidden" name="blah" value={{theMovie.movie.id}}>
+        <label for="">rating:</label>
+        <input type="number" min="1" max="5" name="blah" [(ngModel)]="newReview.rating">
+        <label for="">Review:</label>
+        <textarea name="blah" cols="100" rows="20" [(ngModel)]="newReview.review"></textarea>
+        <button (click)="createAReview()"> Submit </button>
+      </div>
+      <div *ngIf="theMovie.reviews">
+        <div class="theInnerReview">
+          <div *ngFor="let review of theMovie.reviews.reverse()" class="reviewFor">
+            <div class="reviewTitle">
+              <h3>{{review.title}}</h3>
+            </div>
+            <div class="reviewText">
+              <p>{{review.review}}</p>
+              <h5>Written by {{review.user.username}} on {{review.created_at | date:'medium' }}</h5>
+            </div>
+            <hr>
+            <div class="thecomments">
+              <div class="titleandbutton">
+                <h4>Comments</h4>
+                <a routerLink="/makecomment/{{review._id}}"> <button>Comment</button></a>
+              </div>
+              <div *ngIf="review.comments" class="commentitself">
+                <div *ngFor="let comment of review.comments.reverse()">
+                  <div class="comment-heading">
+                    <h4>{{comment.user.username}} </h4><em>{{comment.created_at | date:'medium' }}</em> <br>
+                  </div>
+                  <div class="comment-body">
+                    {{comment.comment}}
+                  </div>
+                  <h5 *ngIf="comment.updated_at!=comment.created_at">Edited at {{comment.updated_at | date:'medium' }}</h5>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-</div>
+  <div class="transparent" [ngStyle]="{'background-image':'url(https://image.tmdb.org/t/p/original' + theMovie.movie.backdrop_path + ')'}">
+
   </div>
 </div>
-</div>
-</div>
-
-<div class="transparent" [ngStyle]="{'background-image':'url(https://image.tmdb.org/t/p/original' + theMovie.movie.backdrop_path + ')'}">
-
-</div>
-</div>
-

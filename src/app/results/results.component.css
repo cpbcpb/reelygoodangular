@@ -1,28 +1,28 @@
-*{
-    color: whitesmoke;
+* {
+  color: whitesmoke;
 }
 
 img {
-    width:150px;
+  width: 150px;
 }
-.eachMovie{
-    display:flex;
-    flex-direction: column;
-    align-items: flex-end;
-    align-content:flex-end;
-    justify-content: flex-end;
-    width: 150px;
-margin: 20px;
-background-color: rgba(20, 31, 90, 0.833);
+.eachMovie {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-content: flex-end;
+  justify-content: flex-end;
+  width: 150px;
+  margin: 20px;
+  background-color: rgba(20, 31, 90, 0.833);
 }
-.flex{
-    display: flex;
-    flex-wrap: wrap;
+.flex {
+  display: flex;
+  flex-wrap: wrap;
 }
-h4{
-    margin:0;
-    padding:0;
+h4 {
+  margin: 0;
+  padding: 0;
 }
-button{
-    color:darkblue;
+button {
+  color: darkblue;
 }

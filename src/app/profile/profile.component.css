@@ -1,65 +1,65 @@
-nav{
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgba(12, 10, 119, 0.945);
-    padding: 20px;
-    margin: 0;
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(12, 10, 119, 0.945);
+  padding: 20px;
+  margin: 0;
 }
-nav button{ 
-    padding: 10px 20px;
-    border-radius: 30px;
-    margin:10px 20px;
-    font-size: 20px;
-    color:rgba(12, 10, 119, 0.945);
+nav button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin: 10px 20px;
+  font-size: 20px;
+  color: rgba(12, 10, 119, 0.945);
 }
-.notloggedin{
-    display:flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    width:100%;
-    color:white;
+.notloggedin {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  color: white;
 }
-.allthesignup{
-    display:flex;
-    flex-direction:column;
+.allthesignup {
+  display: flex;
+  flex-direction: column;
 }
-.allthelogin{
-    display:flex;
-    flex-direction:row;
-    justify-content: space-evenly;
-    width:100vw;
+.allthelogin {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
 }
-.userinfo{
-    display:Flex;
-    flex-direction:row;
+.userinfo {
+  display: Flex;
+  flex-direction: row;
 }
-p{
-    display:Flex;
-    flex-direction:row;
-    align-content: center;
-    align-items: center;
-    color:White;
-    background-color:rgba(0, 0, 139, 0.61);
-    max-width: min-content;
-    margin: 5px 20px 5px 20px;
-    padding: 0 10px;
+p {
+  display: Flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  color: White;
+  background-color: rgba(0, 0, 139, 0.61);
+  max-width: min-content;
+  margin: 5px 20px 5px 20px;
+  padding: 0 10px;
 }
-p img{
-    width: 100px;
+p img {
+  width: 100px;
 }
 
-.transparent{
-    background-image: url("../images/krists-luhaers-543526-unsplash.jpg");
-    content: "";
-    opacity: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
-    z-index: -1;   
-    background-size: contain;
-    background-position: top;
-    background-size: cover;
-    height: 100vh;
-  }
+.transparent {
+  background-image: url("../images/krists-luhaers-543526-unsplash.jpg");
+  content: "";
+  opacity: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+  background-size: contain;
+  background-position: top;
+  background-size: cover;
+  height: 100vh;
+}

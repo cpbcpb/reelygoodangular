@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { CommentformComponent } from './commentform.component';
+import { CommentformComponent } from "./commentform.component";
 
-describe('CommentformComponent', () => {
+describe("CommentformComponent", () => {
   let component: CommentformComponent;
   let fixture: ComponentFixture<CommentformComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommentformComponent ]
-    })
-    .compileComponents();
+      declarations: [CommentformComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('CommentformComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

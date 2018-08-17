@@ -1,42 +1,40 @@
-*{
-    display:flex;
-    flex-direction:column;
-    font-size: 20px;
-    color:white;
-
+* {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: white;
 }
-.dates{
-    display:flex;
-    flex-direction:row;
-    align-items:flex-start;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
-    padding: 5px;
+.dates {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  padding: 5px;
 }
-.dates input{
-    display:inline-block;
-    background-color: rgba(7, 7, 49, 0.795);
-    color:white;
+.dates input {
+  display: inline-block;
+  background-color: rgba(7, 7, 49, 0.795);
+  color: white;
 }
-.dates label{
-    padding: 10px;
-    width:60px;
+.dates label {
+  padding: 10px;
+  width: 60px;
 }
-.form{
-    display:flex;
-    flex-direction:row;
-    flex-wrap: wrap;
-    justify-content: first baseline;
-}
-
-select{
-    font-size: 18px;
-    background-color: rgba(7, 7, 49, 0.795);
-    color:white;
+.form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: first baseline;
 }
 
+select {
+  font-size: 18px;
+  background-color: rgba(7, 7, 49, 0.795);
+  color: white;
+}
 
-button{
-    background-color: rgba(7, 7, 49, 0.795);
-    color:white;
+button {
+  background-color: rgba(7, 7, 49, 0.795);
+  color: white;
 }

@@ -1,30 +1,30 @@
 <nav>
 
-            <div *ngIf="theActualUser">    
-            <button (click)="logMeOut()">Logout</button>
-            </div>
-            
-            <div *ngIf="!theActualUser">
-    
-            <form (submit)="tryToLogin()">
-                {{error}}
-                <div *ngIf="theError">
+    <div *ngIf="theActualUser">
+        <button (click)="logMeOut()">Logout</button>
+    </div>
+
+    <div *ngIf="!theActualUser">
+
+        <form (submit)="tryToLogin()">
+            {{error}}
+            <div *ngIf="theError">
                 Error: {{theError}}
-                </div>
+            </div>
             <label>Username</label>
             <input name="blah" [(ngModel)]="loginUser.username" type="text">
             <label>Password</label>
             <input name="blah" [(ngModel)]="loginUser.password" type="text">
             <button>Login</button>
-            </form>
-            <button *ngIf="!theActualUser" (click)="toggleSignup()">Signup</button>
-            <div *ngIf="signup">
-                <h2>Signup Form</h2>
-                {{error}}
-                <div *ngIf="theError">
-                    Error: {{theError}}
-                </div>
-                <form (submit)="tryToSignUp()">
+        </form>
+        <button *ngIf="!theActualUser" (click)="toggleSignup()">Signup</button>
+        <div *ngIf="signup">
+            <h2>Signup Form</h2>
+            {{error}}
+            <div *ngIf="theError">
+                Error: {{theError}}
+            </div>
+            <form (submit)="tryToSignUp()">
                 <label>Username</label>
                 <input name="blah" [(ngModel)]="signupUser.username" type="text">
                 <label>Password</label>
@@ -32,24 +32,24 @@
                 <label>Email</label>
                 <input name="blah" [(ngModel)]="signupUser.email" type="email">
                 <button>Complete Registration</button>
-                </form>
-                </div>
-            
-            </div>   
-   
-<a [routerLink]="['']"><button>Back to Main Page</button></a>
+            </form>
+        </div>
 
-    </nav> 
+    </div>
 
-<div *ngIf="theActualUser" >
+    <a [routerLink]="['']"><button>Back to Main Page</button></a>
+
+</nav>
+
+<div *ngIf="theActualUser">
     <div class="userinfo">
-<p><img src="{{theActualUser.avatar}}" alt="" width=80px>Username: {{theActualUser.username}}</p>
-<p>Email: {{theActualUser.email}}</p>
-<p>Avatar url:{{theActualUser.avatar}}</p>
-</div>
+        <p><img src="{{theActualUser.avatar}}" alt="" width=80px>Username: {{theActualUser.username}}</p>
+        <p>Email: {{theActualUser.email}}</p>
+        <p>Avatar url:{{theActualUser.avatar}}</p>
+    </div>
 
-<app-list></app-list>
+    <app-list></app-list>
 </div>
 <div class="transparent">
 
-    </div>
+</div>

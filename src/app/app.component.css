@@ -1,15 +1,15 @@
-.whole{
-    position:fixed;
-    content: "";
-        background-image: url("./images/krists-luhaers-543526-unsplash.jpg");
-    top: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
-    z-index: -1;   
-    background-size: contain;
-    background-position: top;
-    background-size: cover;
+.whole {
+  position: fixed;
+  content: "";
+  background-image: url("./images/krists-luhaers-543526-unsplash.jpg");
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+  background-size: contain;
+  background-position: top;
+  background-size: cover;
 
-    height: 100vh;
+  height: 100vh;
 }

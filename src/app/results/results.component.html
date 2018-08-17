@@ -4,25 +4,28 @@
 <div class="flex">
   <div *ngFor="let movie of searchResults" class="eachMovie">
     <h4>{{movie.title}}</h4>
-    <h4>{{movie.release_date  |date}}</h4>
+    <h4>{{movie.release_date |date}}</h4>
     <div *ngIf="theActualUser">
-    <div *ngIf="theActualUser.faveMovies">
-    <button *ngIf="!theActualUser.faveMovies.toString().includes(movie.id)" (click)="favoriteMovie(movie.id)">Add to favorites</button>
-    <button *ngIf="theActualUser.faveMovies.toString().includes(movie.id)" (click)="unfavoriteMovie(movie.id)">Remove from favorites</button>
-    </div>
-  <div *ngIf="theActualUser.wishlist">
-      <button *ngIf="!theActualUser.wishlist.toString().includes(movie.id)" (click)="wishlistMovie(movie.id)">Wishlist!</button>
-      <button *ngIf="theActualUser.wishlist.toString().includes(movie.id)" (click)="unwishlistMovie(movie.id)">Unwishlit!</button>
-    </div>
-  <div *ngIf="theActualUser.seenMovies">
+      <div *ngIf="theActualUser.faveMovies">
+        <button *ngIf="!theActualUser.faveMovies.toString().includes(movie.id)" (click)="favoriteMovie(movie.id)">Add to
+          favorites</button>
+        <button *ngIf="theActualUser.faveMovies.toString().includes(movie.id)" (click)="unfavoriteMovie(movie.id)">Remove
+          from favorites</button>
+      </div>
+      <div *ngIf="theActualUser.wishlist">
+        <button *ngIf="!theActualUser.wishlist.toString().includes(movie.id)" (click)="wishlistMovie(movie.id)">Wishlist!</button>
+        <button *ngIf="theActualUser.wishlist.toString().includes(movie.id)" (click)="unwishlistMovie(movie.id)">Unwishlit!</button>
+      </div>
+      <div *ngIf="theActualUser.seenMovies">
         <button *ngIf="!theActualUser.seenMovies.toString().includes(movie.id)" (click)="seenMovie(movie.id)">Seen it!</button>
-        <button *ngIf="theActualUser.seenMovies.toString().includes(movie.id)" (click)="unseenMovie(movie.id)">Haven't seen it!</button>
-  </div>
-  </div>
+        <button *ngIf="theActualUser.seenMovies.toString().includes(movie.id)" (click)="unseenMovie(movie.id)">Haven't seen
+          it!</button>
+      </div>
+    </div>
     <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="poster from {{movie.title}}">
     <a routerLink="/detail/{{movie.id}}">See detail</a>
-    <h4 *ngIf="plot" >{{movie.genre_ids}}</h4>
+    <h4 *ngIf="plot">{{movie.genre_ids}}</h4>
     <p *ngIf="plot">{{movie.overview}}</p>
 
-</div>
+  </div>
 </div>

@@ -1,141 +1,139 @@
-.transparent{
-    content: "";
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
-    z-index: -1;   
-    background-size: contain;
-    background-position: top;
-    background-size: cover;
+.transparent {
+  content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+  background-size: contain;
+  background-position: top;
+  background-size: cover;
 
-    height: 100vh;
-  }
-  .comment-form{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-content:center;
-      align-items:center;
-
-  }
-  .review-section{
-    display: flex;
-    flex-direction:column;
-    align-content: center;
-    margin:20px;
-
+  height: 100vh;
 }
-.theWholeReview{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-self: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    padding: 50px;
-    background-color:rgba(255,255,255,.3);
-    border-radius: 30px;
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
-.theInnerReview{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: flex-start;
-    margin-top:0;
-    margin-bottom: 20px;
+.review-section {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 20px;
 }
-.reviewFor{
-    border-radius:30px;
-    background-color:rgba(255,255,255,.3);
-    margin:5px;
-    padding: 5px;
+.theWholeReview {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
 }
-.theWholeReview h3{
-    margin:0;
+.theInnerReview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
-.theWholeReview button{
-max-width: max-content;
-padding: 5px;
-border-radius: 40px;
-margin:0;
-background-color:rgba(255,255,255,.3);
-
+.reviewFor {
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 5px;
+  padding: 5px;
 }
-.reviewTitle{
-    text-align: center;
-    font-family: arial;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin:20px;
-    font-size: 30px;
+.theWholeReview h3 {
+  margin: 0;
 }
-.reviewText{
-    font-family:arial;
-    padding-left: 40px;
-    padding-right: 40px;
+.theWholeReview button {
+  max-width: max-content;
+  padding: 5px;
+  border-radius: 40px;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.3);
 }
-.reviewText p{
-    font-family:arial;
-    padding-left: 40px;
-    padding-right: 40px;
-    font-size:24px;
+.reviewTitle {
+  text-align: center;
+  font-family: arial;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 20px;
+  font-size: 30px;
 }
-.reviewText h5{
-    font-family:arial;
-    padding-left: 40px;
-    padding-right: 40px;
+.reviewText {
+  font-family: arial;
+  padding-left: 40px;
+  padding-right: 40px;
 }
-.formDiv{
-    display:flex;
-    flex-direction:row;
+.reviewText p {
+  font-family: arial;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 24px;
 }
-.formComment{
-    display: flex;
-    flex-direction: column;
-    background-color:rgba(255,255,255,.3);
-    align-items: flex-start;
-    padding: 20px;
-    border-radius: 10px;
+.reviewText h5 {
+  font-family: arial;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.formDiv {
+  display: flex;
+  flex-direction: row;
+}
+.formComment {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.3);
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.formComment button{
-    border-radius: 10px;
-    padding: 10px;
+.formComment button {
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.formReview{
-    display: flex;
-    flex-direction: column;
-    background-color:rgba(255,255,255,.3);
-    align-items: flex-start;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: max-content;
+.formReview {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.3);
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: max-content;
 }
 
-.formReview button{
-    border-radius: 10px;
-    padding: 10px;
+.formReview button {
+  border-radius: 10px;
+  padding: 10px;
 }
-.titleandbutton{
-    display:flex;
-    margin:0 20px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+.titleandbutton {
+  display: flex;
+  margin: 0 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-.commentitself, h4{
-margin:0;
-padding:3px 4px 0 0;
-display:inline;
+.commentitself,
+h4 {
+  margin: 0;
+  padding: 3px 4px 0 0;
+  display: inline;
 }
-.comment-heading{
-margin: 0 20px 0 20px;
+.comment-heading {
+  margin: 0 20px 0 20px;
 }
 
-.comment-body{
-    margin: 2px 30px 0 30px;
-    padding: 0 0 10px 0;
+.comment-body {
+  margin: 2px 30px 0 30px;
+  padding: 0 0 10px 0;
 }

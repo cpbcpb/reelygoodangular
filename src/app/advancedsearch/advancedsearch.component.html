@@ -1,71 +1,71 @@
 <div class="form">
   <div class="dates">
-<label for="year" required="true" name="blah" >Year</label>
-<input type="number" value="2018"  min="1910" max="2030" [(ngModel)]="searchQuery.year">
-</div>
-<div class="dates">
-<label  name="blah" for="release_datelte">Released before:</label>
-
-<input type="date" name="release_datelte" [(ngModel)]="searchQuery.primary_release_datelte" >
-</div>
-<div class="dates">
-<label  for="release_date.gte" >Released after:</label>
-
-<input  type="date" name="release_dategte" [(ngModel)]="searchQuery.primary_release_dategte">
-</div>
-<div class="dates">
-<label for="with_genres">With these genres:</label>
-<select multiple="multiple" name="with_genres" id="" [(ngModel)]="searchQuery.with_genres" >
-    <option value="28"> Action</option>
-    <option value="12" >Adventure</option>
-    <option value="16" >Animation</option>
-    <option value="35" >Comedy</option>
-    <option value="80" >Crime</option>
-    <option value="99" >Documentary</option>
-    <option value="18" >Drama</option>
-    <option value="10751" >Family</option>
-    <option value="14" >Fantasy</option>
-    <option value="36" >History</option>
-    <option value="27"> Horror</option>
-    <option value="10402" >Music</option>
-    <option value="9648" >Mystery</option>
-    <option value="10749" >Romance</option>
-    <option value="878"> Science Fiction</option>
-    <option value="10770" >TV Movie</option>
-    <option value="53"> Thriller</option>
-    <option value="10752"> War</option>
-    <option value="37"> Western</option>
-  </select>
-</div>
-<div class="dates">
-<label for="without_genres">Without these genres:</label>
-<select multiple="multiple" name="without_genres" id="" [(ngModel)]="searchQuery.without_genres" >
-    <option value="28"> Action</option>
-    <option value="12" >Adventure</option>
-    <option value="16" >Animation</option>
-    <option value="35" >Comedy</option>
-    <option value="80" >Crime</option>
-    <option value="99" >Documentary</option>
-    <option value="18" >Drama</option>
-    <option value="10751" >Family</option>
-    <option value="14" >Fantasy</option>
-    <option value="36" >History</option>
-    <option value="27"> Horror</option>
-    <option value="10402" >Music</option>
-    <option value="9648" >Mystery</option>
-    <option value="10749" >Romance</option>
-    <option value="878"> Science Fiction</option>
-    <option value="10770" >TV Movie</option>
-    <option value="53"> Thriller</option>
-    <option value="10752"> War</option>
-    <option value="37"> Western</option>
-  </select>
-  <label for="rating">Rated:</label>
-<input type="text" name="rating" [(ngModel)]="searchQuery.certification">
-</div>
-</div>
-  <input type="hidden" name="page" value="1"  [(ngModel)]="searchQuery.page" >
-<button (click)="advancedSearch()">Find Movie</button> 
-<div *ngIf="searchResults">
-<app-results [searchResults]="searchResults"></app-results>
+    <label for="year" required="true" name="blah">Year</label>
+    <input type="number" value="2018" min="1910" max="2030" [(ngModel)]="searchQuery.year">
   </div>
+  <div class="dates">
+    <label name="blah" for="release_datelte">Released before:</label>
+
+    <input type="date" name="release_datelte" [(ngModel)]="searchQuery.primary_release_datelte">
+  </div>
+  <div class="dates">
+    <label for="release_date.gte">Released after:</label>
+
+    <input type="date" name="release_dategte" [(ngModel)]="searchQuery.primary_release_dategte">
+  </div>
+  <div class="dates">
+    <label for="with_genres">With these genres:</label>
+    <select multiple="multiple" name="with_genres" id="" [(ngModel)]="searchQuery.with_genres">
+      <option value="28"> Action</option>
+      <option value="12">Adventure</option>
+      <option value="16">Animation</option>
+      <option value="35">Comedy</option>
+      <option value="80">Crime</option>
+      <option value="99">Documentary</option>
+      <option value="18">Drama</option>
+      <option value="10751">Family</option>
+      <option value="14">Fantasy</option>
+      <option value="36">History</option>
+      <option value="27"> Horror</option>
+      <option value="10402">Music</option>
+      <option value="9648">Mystery</option>
+      <option value="10749">Romance</option>
+      <option value="878"> Science Fiction</option>
+      <option value="10770">TV Movie</option>
+      <option value="53"> Thriller</option>
+      <option value="10752"> War</option>
+      <option value="37"> Western</option>
+    </select>
+  </div>
+  <div class="dates">
+    <label for="without_genres">Without these genres:</label>
+    <select multiple="multiple" name="without_genres" id="" [(ngModel)]="searchQuery.without_genres">
+      <option value="28"> Action</option>
+      <option value="12">Adventure</option>
+      <option value="16">Animation</option>
+      <option value="35">Comedy</option>
+      <option value="80">Crime</option>
+      <option value="99">Documentary</option>
+      <option value="18">Drama</option>
+      <option value="10751">Family</option>
+      <option value="14">Fantasy</option>
+      <option value="36">History</option>
+      <option value="27"> Horror</option>
+      <option value="10402">Music</option>
+      <option value="9648">Mystery</option>
+      <option value="10749">Romance</option>
+      <option value="878"> Science Fiction</option>
+      <option value="10770">TV Movie</option>
+      <option value="53"> Thriller</option>
+      <option value="10752"> War</option>
+      <option value="37"> Western</option>
+    </select>
+    <label for="rating">Rated:</label>
+    <input type="text" name="rating" [(ngModel)]="searchQuery.certification">
+  </div>
+</div>
+<input type="hidden" name="page" value="1" [(ngModel)]="searchQuery.page">
+<button (click)="advancedSearch()">Find Movie</button>
+<div *ngIf="searchResults">
+  <app-results [searchResults]="searchResults"></app-results>
+</div>
